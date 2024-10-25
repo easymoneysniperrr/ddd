@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index-C4KqSCnZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DXSc9fYU.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      ;(function (window, document) {
+        function resize() {
+          var ww = window.innerWidth
+          var dpr = window.devicePixelRatio
+          var scale = 1
+          // 适配2K
+          if (ww * dpr >= 1680) {
+            scale = Math.max(Math.min(dpr, 1.25), 1)
+          }
+          // 适配4K
+          if (ww * dpr >= 3800) {
+            scale = Math.max(Math.min(dpr, 2.5), 1)
+          }
+          // 苹果设备处理
+          var isMac = /macintosh|mac os x/i.test(window.navigator.userAgent)
+          var cardinal = 100
+          if (dpr >= 2 && isMac) {
+            cardinal = 160
+          }
+          document.documentElement.style.fontSize =
+            (scale * cardinal) / dpr + 'px'
+        }
+
+        resize()
+
+        window.addEventListener('resize', resize)
+        window.addEventListener('pageshow', function (e) {
+          if (e.presisted) {
+            resize()
+          }
+        })
+      })(window, document)
+    </script>
+  </body>
+</html>
