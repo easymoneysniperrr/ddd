@@ -3,7 +3,7 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-25 10:38:30
- * @LastEditTime: 2024-10-25 17:50:48
+ * @LastEditTime: 2024-10-25 17:54:55
  */
 import { fileURLToPath, URL } from 'node:url'
 
@@ -17,7 +17,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/guian-website', // github部署使用
+  base: '/guian-website/', // github部署使用
   plugins: [
     vue(),
     AutoImport({
