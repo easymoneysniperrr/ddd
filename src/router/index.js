@@ -3,7 +3,7 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-25 10:38:30
- * @LastEditTime: 2024-10-25 15:21:26
+ * @LastEditTime: 2024-10-25 16:06:08
  */
 import { createRouter, createWebHashHistory } from 'vue-router'
 
@@ -12,7 +12,7 @@ const modules = import.meta.glob('../views/*.vue')
 const routes = [
   {
     path: '/',
-    redirect: '/website',
+    redirect: '/websiteHome',
   },
 ]
 

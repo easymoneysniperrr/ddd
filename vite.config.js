@@ -3,7 +3,7 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-25 10:38:30
- * @LastEditTime: 2024-10-25 11:19:11
+ * @LastEditTime: 2024-10-25 16:18:24
  */
 import { fileURLToPath, URL } from 'node:url'
 
@@ -21,34 +21,40 @@ export default defineConfig({
     vue(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
+      imports: ['vue'], // vue自动导入
+      eslintrc: {
+        enabled: true,
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: 'readonly'
+      }
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
-    }),
+      resolvers: [ElementPlusResolver()]
+    })
   ],
   css: {
     postcss: {
       plugins: [
         postCssPxToRem({
           rootValue: 100,
-          propList: ['*'],
+          propList: ['*']
         }),
         {
           postcssPlugin: 'internal:charset-removal',
           AtRule: {
-            charset: atRule => {
+            charset: (atRule) => {
               if (atRule.name === 'charset') {
                 atRule.remove()
               }
-            },
-          },
-        },
-      ],
-    },
+            }
+          }
+        }
+      ]
+    }
   },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
 })
