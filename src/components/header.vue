@@ -6,19 +6,24 @@
  * @LastEditTime: 2024-10-25 16:22:51
 -->
 <template>
-  <div id="header">
-    <el-menu
-      :default-active="activeIndex"
-      mode="horizontal"
-      @select="handleSelect"
-    >
-      <el-menu-item index="websiteHome">首页</el-menu-item>
-      <el-menu-item index="appCenter">鸿蒙原生应用中心</el-menu-item>
-    </el-menu>
-  </div>
+  <header class="bg-white shadow-sm">
+    <div class="container">
+      <div class="logo">贵安新区全域数字化赋能门户</div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link">生态加盟</a></li>
+          <li><a href="#" class="nav-link">贵鸿开发社区</a></li>
+          <li><a href="#" class="nav-link">关于贵安新区</a></li>
+          <li><el-button type="primary" plain class="ml-4" @click="handleLogin">登录</el-button></li>
+          <li><el-button type="primary" @click="handleRegister">注册</el-button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
@@ -37,4 +42,53 @@ const handleSelect = (index) => {
   router.push({ name: index })
 }
 
+const handleLogin = () => {
+  // 处理登录逻辑
+}
+
+const handleRegister = () => {
+  // 处理注册逻辑
+}
 </script>
+
+<style scoped lang="scss">
+header {
+  .container {
+    // max-width: 12rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.60);
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.90);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .nav-link {
+      color: rgba(0, 0, 0, 0.90);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 16px;
+      font-weight: 400;
+      margin-right: 64px;
+    }
+
+    .ml-4 {
+      margin-left: 16px;
+    }
+  }
+}
+</style>
