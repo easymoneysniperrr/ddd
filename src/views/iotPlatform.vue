@@ -9,7 +9,7 @@
             <img src="@/assets/images/iotPlatform/ic_notification.png" style="width: 20px; height: 24px;" />
             <span class="user-dropdown">
               <el-avatar :size="32" src="/placeholder.svg" />
-              <span>Tencent</span>
+              <span>Zekooo</span>
               <img src="@/assets/images/iotPlatform/ic_more.png" alt="展开" width="10" height="6" />
             </span>
         </div>
@@ -106,7 +106,7 @@
         <div class="section-header">
           <h2 class="section-title">标准规范</h2>
         </div>
-        <el-row :gutter="20">
+        <el-row :gutter="112">
           <el-col :span="12" v-for="(standard, index) in standards" :key="index">
             <el-card class="standard-card" shadow="hover"
             @click="handleStandardClick(index)">
@@ -700,7 +700,7 @@ onMounted(() => {
   align-items: start;
   
   .standards-content {
-    max-width: 1370px;
+    max-width: 1360px;
     width: 100%;
     padding-top: 55px;
     box-sizing: border-box;
@@ -720,18 +720,19 @@ onMounted(() => {
   .standard-card {
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(26, 117, 255, 1);
-    width: 621px;
+    max-width: 621px;
     height: 56px;
     cursor: pointer;
     margin-top: 24px;
     .standard-item {
       display: flex;
       align-items: center;
-      gap: 48px;
+      gap: 88px;
       
       span {
         font-size: 16px;
         color: rgba(51, 51, 51, 1);
+        text-wrap: nowrap;
       }
     }
   }

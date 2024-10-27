@@ -356,7 +356,7 @@ const generateId = (title) => {
 
   .platform-section {
     background: rgba(244, 249, 255, 1);
-
+    padding: 64px 0 31px;
     .platform-card {
       background: rgba(255, 255, 255, 1);
       height: 100%;
