@@ -14,8 +14,10 @@
           <li><a href="#" class="nav-link">生态加盟</a></li>
           <li><a href="#" class="nav-link">贵鸿开发社区</a></li>
           <li><a href="#" class="nav-link">关于贵安新区</a></li>
-          <li><el-button type="primary" plain class="ml-4" @click="handleLogin">登录</el-button></li>
-          <li><el-button type="primary" @click="handleRegister">注册</el-button></li>
+          <li class="last-item">
+            <span class="avatar"></span>
+            <span class="ml-4">Zekooo</span>
+          </li>
         </ul>
       </nav>
     </div>
@@ -85,7 +87,17 @@ header {
       font-weight: 400;
       margin-right: 64px;
     }
-
+    .last-item {
+      display: flex;
+      align-items: center;
+    }
+    .avatar {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #d9d9d9;
+    }
     .ml-4 {
       margin-left: 16px;
     }

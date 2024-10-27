@@ -7,6 +7,22 @@
 -->
 <template>
   <div class="website-home">
+    <header class="bg-white shadow-sm">
+    <div class="header-container">
+      <div class="logo">贵安新区全域数字化赋能门户</div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link">生态加盟</a></li>
+          <li><a href="#" class="nav-link">贵鸿开发社区</a></li>
+          <li><a href="#" class="nav-link">关于贵安新区</a></li>
+          <li class="last-item">
+            <span class="avatar"></span>
+            <span class="ml-4">Zekooo</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
     <main>
       <!-- 轮播图部分 -->
       <div class="carousel-container">
@@ -18,7 +34,7 @@
         <div class="container">
           <el-row :gutter="20">
             <el-col :xs="24" :sm="12" :md="6" v-for="(item, index) in platforms" :key="index">
-              <el-card class="platform-card" shadow="hover">
+              <el-card class="platform-card" style="cursor: pointer;" shadow="hover" @click="scrollToSection(item.title)">
                 <div class="card-content">
                   <img :src="item.image" width="72" height="72">
                   <div class="card-text">
@@ -33,11 +49,16 @@
       </section>
 
       <!-- 平台板块 -->
-      <section v-for="(item, index) in platforms" :key="index" class="platform-detail" :style="'background-color:' + (index % 2 == 0 ? 'rgba(244, 249, 255, 1)' : 'rgba(224, 236, 249, 1)')">
+      <section v-for="(item, index) in platforms" 
+        :key="index" 
+        class="platform-detail" 
+        :id="generateId(item.title)"
+        :style="'background-color:' + (index % 2 == 0 ? 'rgba(244, 249, 255, 1)' : 'rgba(224, 236, 249, 1)')"
+      >
         <div class="container">
           <div class="section-header">
             <h2>{{ item.title }}</h2>
-            <el-button class="enter-button" type="primary">进入平台</el-button>
+            <el-button class="enter-button" type="primary" @click="handleEnterPlatform(item.route)">进入平台</el-button>
           </div>
           <p class="section-desc">
                 {{ item.desc }}
@@ -151,6 +172,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import platform_1 from '@/assets/images/platform_1.png'
 import platform_2 from '@/assets/images/platform_2.png'
 import platform_3 from '@/assets/images/platform_3.png'
@@ -161,26 +183,32 @@ const images = [
   "/placeholder.svg?height=600&width=1200",
 ]
 
+const router = useRouter()
+
 const platforms = [
   {
     title:  "全域数字化赋码中心",
     desc: '基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么',
-    image: platform_1
+    image: platform_1,
+    route: '/digitalCode'
   },
   {
     title:  "融合服务中心",
     desc: '基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么',
-    image: platform_2
+    image: platform_2,
+    route: '/fusionService'
   },
   {
     title:  "城市物联网平台",
     desc: '基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么',
-    image: platform_3
+    image: platform_3,
+    route: '/iotPlatform'
   },
   {
     title:  "城市鸿蒙生态中心",
     desc: '基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么基于xxxxx的系统，有什么',
-    image: platform_4
+    image: platform_4,
+    route: '/harmonyOS'
   }
 ]
 
@@ -229,10 +257,75 @@ const tabMap = {
   'city': 1,
   'transport': 2
 }
+
+const handleEnterPlatform = (route) => {
+  router.push(route)
+}
+
+const scrollToSection = (title) => {
+  const section = document.getElementById(title.replace(/\s+/g, '').toLowerCase())
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+const generateId = (title) => {
+  return title.replace(/\s+/g, '').toLowerCase()
+}
 </script>
 
 <style scoped lang="scss">
 .website-home {
+  header {
+  .header-container {
+    width: 100%;
+    // max-width: 12rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.60);
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.90);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .nav-link {
+      color: rgba(0, 0, 0, 0.90);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 16px;
+      font-weight: 400;
+      margin-right: 64px;
+    }
+    .last-item {
+      display: flex;
+      align-items: center;
+    }
+    .avatar {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #d9d9d9;
+    }
+    .ml-4 {
+      margin-left: 16px;
+    }
+  }
+}
   .carousel-container {
     width: 100%;
     height: 960px;
@@ -498,6 +591,8 @@ const tabMap = {
   }
 }
 </style>
+
+
 
 
 
