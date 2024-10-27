@@ -238,7 +238,7 @@ const platforms = [
   },
   {
     title:  "城市鸿蒙生态中心",
-    desc: '城市鸿蒙生态中心，是在基于 Open Harmony 打造的贵鸿OS城市发行版的基础上，通过建立资源共享、技术支持、开放交流的平台，提供一站式鸿蒙化解决方案，帮助应用厂商、设备厂商的高效开发鸿蒙应用、低成本实现设备鸿蒙化，推动贵鸿生态系统建设。',
+    desc: '城市鸿蒙生态中心，是在基于 OpenHarmony 打造的贵鸿OS城市发行版的基础上，通过建立资源共享、技术支持、开放交流的平台，提供一站式鸿蒙化解决方案，帮助应用厂商、设备厂商的高效开发鸿蒙应用、低成本实现设备鸿蒙化，推动贵鸿生态系统建设。',
     image: platform4,
     items: [
       {
@@ -254,7 +254,7 @@ const platforms = [
         title: '生态设备'
       }
     ],
-    route: '/harmonyOS'
+    route: '/innovationCenter'
   }
 ]
 
@@ -319,21 +319,6 @@ const generateId = (title) => {
   return title.replace(/\s+/g, '').toLowerCase()
 }
 
-// 在 platforms 数组后添加新的数据
-const platformItems = [
-  {
-    image: '@/assets/images/alt.png',
-    title: '河湾物联感知平台'
-  },
-  {
-    image: '@/assets/images/alt.png',
-    title: '智慧园区管理平台'
-  },
-  {
-    image: '@/assets/images/alt.png',
-    title: '数字孪生平台'
-  }
-]
 </script>
 
 <style scoped lang="scss">

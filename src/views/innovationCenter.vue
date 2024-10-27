@@ -1,20 +1,37 @@
 <template>
   <div class="min-h-screen bg-gray-100">
     <!-- Header -->
-    <header class="w-100% h-680px bg-cover bg-center">
-      <img src="@/assets/images/innovationCenter/banner.png" alt="创新中心横幅" class="w-full h-full object-cover">
-      <div class="box-border px-40px absolute left-0 top-0 w-full h-64px bg-white bg-op-70 flex flex-row items-center justify-between">
-        <h1 class="text-20px font-500 mb-4px relative z-10">贵阳贵安鸿蒙城市生态中心</h1>
+    <header class="w-100% h-680px bg-cover bg-center relative">
+      <!-- 背景图片放在最底层 -->
+      <img src="@/assets/images/innovationCenter/banner.png" alt="创新中心横幅" class="w-full h-full object-cover absolute top-0 left-0">
+      
+      <!-- 导航栏提高层级 -->
+      <div class="box-border px-40px absolute left-0 top-0 w-full h-64px bg-white bg-op-70 flex flex-row items-center justify-between z-10">
+        <h1 class="text-20px font-500 mb-4px">贵阳贵安鸿蒙城市生态中心</h1>
         <ul class="flex flex-row items-center justify-between text-16px">
-            <li class="px-24px text-color-#007CF7 cursor-pointer">创新中心</li>
-            <li class="px-24px cursor-pointer">贵鸿开发者社区</li>
-            <li class="px-24px cursor-pointer">贵鸿应用中心</li>
-            <li class="pl-24px cursor-pointer">贵鸿设备中心</li>
+          <li 
+            class="px-24px cursor-pointer text-color-#007CF7"
+            @click="goToPage('innovation')"
+          >创新中心</li>
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('developer')"
+          >贵鸿开发者社区</li>
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('application')"
+          >贵鸿应用中心</li>
+          <li 
+            class="pl-24px cursor-pointer"
+            @click="goToPage('device')"
+          >贵鸿设备中心</li>
         </ul>
       </div>
-      <div class="absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center mt--140px">
+
+      <!-- 中间的文字内容 -->
+      <div class="absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center mt--140px z-1">
         <p class="text-72px font-500 color-white">贵鸿生态创新中心</p>
-        <p class="text-32px color-white fw-400 mt-37px">基于 Open Harmony 打造贵鸿OS城市发行版，赋能千行百业</p>
+        <p class="text-32px color-white fw-400 mt-37px">基于 OpenHarmony 打造贵鸿OS城市发行版，赋能千行百业</p>
       </div>
     </header>
     <!-- 贵鸿OS Features -->
@@ -163,7 +180,25 @@ import certification1 from '@/assets/images/innovationCenter/certification_1.png
 import certification2 from '@/assets/images/innovationCenter/certification_2.png'
 import certification3 from '@/assets/images/innovationCenter/certification_3.png'
 import certification4 from '@/assets/images/innovationCenter/certification_4.png'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
+
+const goToPage = (type) => {
+  const routes = {
+    developer: '/coderCommunity',    // 开发者社区路由
+    application: '/appCenter',   // 应用中心路由
+    device: '/deviceCenter'             // 设备中心路由
+  }
+  router.push(routes[type])
+}
+
+onMounted(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto' // 或者使用 'auto' 立即滚动
+  })
+})
 const featureImages = [feature1, feature2, feature3, feature4]
 
 const features = [
@@ -361,6 +396,8 @@ const ecoImages = [eco1, eco2, eco3, eco4]
   }
 }
 </style>
+
+
 
 
 

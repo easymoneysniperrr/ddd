@@ -7,6 +7,30 @@
 -->
 <template>
   <div class="coder-community">
+    <header class="w-100% h-68px bg-cover bg-center relative">
+      <!-- 导航栏提高层级 -->
+      <div class="box-border px-40px absolute left-0 top-0 w-full h-64px bg-white bg-op-70 flex flex-row items-center justify-between z-10">
+        <h1 class="text-20px font-500 mb-4px">贵阳贵安鸿蒙城市生态中心</h1>
+        <ul class="flex flex-row items-center justify-between text-16px">
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('innovation')"
+          >创新中心</li>
+          <li 
+            class="px-24px cursor-pointer text-color-#007CF7"
+            @click="goToPage('developer')"
+          >贵鸿开发者社区</li>
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('application')"
+          >贵鸿应用中心</li>
+          <li 
+            class="pl-24px cursor-pointer"
+            @click="goToPage('device')"
+          >贵鸿设备中心</li>
+        </ul>
+      </div>
+    </header>
     <section class="banner-area">
       <div class="title" style="color: white;">贵鸿开发者社区</div>
       <div class="des">建立资源共享、技术支持、开放交流的平台，帮助厂商的开发人员提高技能和解决问题，推动贵鸿生态系统建设，促进创新和合作</div>
@@ -102,6 +126,7 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
 const morePng = new URL('../assets/images/coder-community/Frame(1).png', import.meta.url).href
 
 const introductPng1 = new URL('../assets/images/coder-community/Frame.png', import.meta.url).href
@@ -157,6 +182,15 @@ const experiences = [
   { title: '视频教程', desc: '系统学习贵鸿OS设备、应用的开发', imgUrl: way3},
   { title: '开发者示例', desc: '快速体验服务教程和开发示例', imgUrl: way4},
 ]
+const router = useRouter()
+const goToPage = (type) => {
+  const routes = {
+    innovation: '/innovationCenter',    // 创新中心路由
+    application: '/appCenter',   // 应用中心路由
+    device: '/deviceCenter'             // 设备中心路由
+  }
+  router.push(routes[type])
+}
 </script>
 
 <style lang="scss">
