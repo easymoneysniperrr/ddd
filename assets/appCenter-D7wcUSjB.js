@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper-DlAUqK2U.js";import{c as r,o as c}from"./index-6senHo0J.js";const o={};function t(n,a){return c(),r("div",null," 鸿蒙应用中心 ")}const f=e(o,[["render",t]]);export{f as default};
