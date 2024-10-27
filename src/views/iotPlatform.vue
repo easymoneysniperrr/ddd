@@ -8,7 +8,7 @@
         <div class="user-info">
             <img src="@/assets/images/iotPlatform/ic_notification.png" style="width: 20px; height: 24px;" />
             <span class="user-dropdown">
-              <el-avatar :size="32" src="/placeholder.svg" />
+              <img width="40" height="40" src="@/assets/images/ic_user.png" />
               <span>Zekooo</span>
               <img src="@/assets/images/iotPlatform/ic_more.png" alt="展开" width="10" height="6" />
             </span>
@@ -241,7 +241,7 @@ const handleSelect = (key) => {
     }
     
     if (element) {
-      // 获取导航栏高度，避免被导航栏遮挡
+      // 获取导航栏高度，避���被导航栏遮挡
       const navHeight = document.querySelector('.nav-menu')?.offsetHeight || 0
       const headerOffset = 66 // 导航栏高度
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
@@ -284,7 +284,7 @@ const linkMap = {
     '设备监控': 'http://117.187.242.207:8082/iotyx/?id=dhgmv2&p=%E8%AE%BE%E5%A4%87%E7%9B%91%E6%8E%A7&c=1',
     '在线调试': 'http://117.187.242.207:8082/iotcity/#/developer_m/onlineDebuggeing_m',
     'OTA升级': 'http://117.187.242.207:8082/iotcity/#/monitor_m/ota_m',
-    '数据看板': 'http://117.187.242.207:8082/iotcity/#/statistical_analysis_m/data-overview'
+    '数据��板': 'http://117.187.242.207:8082/iotcity/#/statistical_analysis_m/data-overview'
   }
 }
 
@@ -298,14 +298,14 @@ const standardLinks = [
 const handleStandardClick = (index) => {
   const url = standardLinks[index]
   if (url) {
-    window.open(url, '_blank')
+    window.location.href = url
   }
 }
 
 const handleCardClick = (sectionId, label) => {
   const url = linkMap[sectionId]?.[label]
   if (url) {
-    window.open(url, '_blank')
+    window.location.href = url
   }
 }
 
@@ -759,6 +759,7 @@ onMounted(() => {
 }
 
 </style>
+
 
 
 

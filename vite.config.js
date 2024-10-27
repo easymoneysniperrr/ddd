@@ -10,6 +10,8 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import postCssPxToRem from 'postcss-pxtorem'
+import UnoCSS from 'unocss/vite'
+import { presetUno, presetAttributify, presetIcons } from 'unocss'
 // element 按需导入
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -17,7 +19,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/guian-website/', // github部署使用
+  base: '/newportal/', // 匹配 Nginx 配置的路径前缀
   plugins: [
     vue(),
     AutoImport({
@@ -31,6 +33,13 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()]
+    }),
+    UnoCSS({
+      presets: [
+        presetUno(),
+        presetAttributify(),
+        presetIcons()
+      ]
     })
   ],
   css: {
