@@ -3,7 +3,7 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-27 17:26:39
- * @LastEditTime: 2024-10-27 20:38:39
+ * @LastEditTime: 2024-10-27 22:16:51
 -->
 <template>
   <div class="coder-community">
@@ -51,9 +51,7 @@
     <section class="support" style="height: 771px;">
       <div class="title">获得多维度的全程技术支持</div>
       <div class="container">
-        <div class="image-box">
-          <img src="../assets//images/coder-community/Frame 29.png" />
-        </div>
+        <div class="image-box"></div>
         <div 
           v-for="(item, index) in cards" 
           :key="index" 
@@ -72,7 +70,7 @@
     </section>
 
     
-    <section class="introduction" style="height: 672px;">
+    <section class="introduction">
       <div class="title">接入规范</div>
       <div class="introducts">
         <div v-for="item of norms" style="flex: 1;" class="item">
@@ -94,7 +92,7 @@
       </div>
     </section>
 
-    <section class="introduction" style="height: 800px;">
+    <section class="introduction">
       <div class="title">提供完善的生态厂商服务，帮助厂商简易、低成本完成设备与应用的开发，提高产品竞争力，并提供全套运营支撑服务</div>
       <div class="introducts">
         <div v-for="item of services" class="item">
@@ -241,8 +239,8 @@ const goToPage = (type) => {
   }
 
   .introduction {
-    height: 718px;
     background: rgba(237,244,255,0.5);
+    padding-bottom: 100px;
     .title {
       margin: 100px 240px;
       line-height: 60px;
@@ -267,7 +265,9 @@ const goToPage = (type) => {
       grid-template-columns: 1fr 1fr 1fr;
       gap: 20px;
       .image-box {
+        background: url('../assets/images/coder-community/Frame 29.png') center center / cover no-repeat;
         grid-row: 1 / span 2;
+        border-radius: 20px;
       }
       .card {
         height: 200px;
