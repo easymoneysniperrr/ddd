@@ -352,7 +352,7 @@ const generateId = (title) => {
   }
 
   .logo {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.90);
   }

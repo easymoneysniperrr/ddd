@@ -10,7 +10,7 @@
     <header class="w-100% h-68px bg-cover bg-center relative">
       <!-- 导航栏提高层级 -->
       <div class="box-border px-40px absolute left-0 top-0 w-full h-64px bg-white bg-op-70 flex flex-row items-center justify-between z-10">
-        <h1 class="text-20px font-500 mb-4px">贵阳贵安鸿蒙城市生态中心</h1>
+        <h1 class="text-20px font-500 mb-4px cursor-pointer" @click="router.push('/websiteHome')">贵阳贵安鸿蒙城市生态中心</h1>
         <ul class="flex flex-row items-center justify-between text-16px">
           <li 
             class="px-24px cursor-pointer"
