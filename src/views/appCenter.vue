@@ -3,7 +3,7 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-25 16:12:44
- * @LastEditTime: 2024-10-28 10:28:41
+ * @LastEditTime: 2024-10-28 11:32:22
 -->
 <template>
   <div class="app-center">
@@ -173,24 +173,24 @@ const classicCards = [
 ]
 
 const yunyinzengzhi = [
-  { title: '卡片中心', desc: '对生态厂商上架的卡片进行统一运营', image: yun1 },
-  { title: '卡片订阅', desc: '统一管理用户订阅的卡片', image: yun2 },
-  { title: '应用统一管理', desc: '统一管理贵鸿市场上架', image: yun3 },
-  { title: '数据分析', desc: '提供全面的分发、使用服务数据，把握运营情况', image: yun4 },
+  { title: '卡片中心', link: 'https://cloud-test.openvalley.net/app-applications#/card-management', desc: '对生态厂商上架的卡片进行统一运营', image: yun1 },
+  { title: '卡片订阅', link: 'https://cloud-test.openvalley.net/app-applications#/card-subInfo', desc: '统一管理用户订阅的卡片', image: yun2 },
+  { title: '应用统一管理', link: 'https://cloud-test.openvalley.net/app-applications#/putway', desc: '统一管理贵鸿市场上架', image: yun3 },
+  { title: '数据分析', link: 'https://cloud-test.openvalley.net/app-applications#/install-unstall', desc: '提供全面的分发、使用服务数据，把握运营情况', image: yun4 },
 ]
 
 const cards = [
   { title: "添加卡片", link: 'https://cloud-test.openvalley.net/app-applications#/card-management', description: "一个应用可以添加多个卡片，适用于不同的场景", imgUrl: card1 },
-  { title: "我的卡片管理", description: "统一管理我开发的卡片，维护卡片展示信息", imgUrl: card2 },
-  { title: "添加卡片触发方式", description: "定义卡片的触发方式，支持通过位置、突发事件、时间等方式触发", imgUrl: card3 },
-  { title: "卡片触发管理", description: "统一管理各卡片支持的触发方式，一个卡片可以有多种触发方式", imgUrl: card4 },
+  { title: "我的卡片管理", link: 'https://cloud-test.openvalley.net/app-applications#/card-management', description: "统一管理我开发的卡片，维护卡片展示信息", imgUrl: card2 },
+  { title: "添加卡片触发方式", link: 'https://cloud-test.openvalley.net/app-applications#/card-configuration', description: "定义卡片的触发方式，支持通过位置、突发事件、时间等方式触发", imgUrl: card3 },
+  { title: "卡片触发管理", link: 'https://cloud-test.openvalley.net/app-applications#/card-configuration', description: "统一管理各卡片支持的触发方式，一个卡片可以有多种触发方式", imgUrl: card4 },
 ]
 
 const apps = [
-  { title: "创建应用", imgUrl: app1, link: 'https://cloud-test.openvalley.net/app-applications#/card-management', description: "创建应用若选择是“原子化”应用，则应用支持免安装。" },
-  { title: "开发应用", imgUrl: app2, link: 'https://cloud-test.openvalley.net/app-applications#/card-management', description: "您可以根据您的实际需求选择合适的开发服务能力。" },
-  { title: "上传应用版本", imgUrl: app3, link: 'https://cloud-test.openvalley.net/app-applications#/card-management', description: "平台提供应用版本管理能力，历史版本、开发中的版本均可在平台进行维护。" },
-  { title: "申请上架贵鸿市场", imgUrl: app4, link: 'https://cloud-test.openvalley.net/app-applications#/card-management', description: "提交上架申请，通过后即可在贵鸿应用市场看得并下载应用。" },
+  { title: "创建应用", imgUrl: app1, link: 'https://cloud-test.openvalley.net/app-applications#/appsManage', description: "创建应用若选择是“原子化”应用，则应用支持免安装。" },
+  { title: "开发应用", imgUrl: app2, link: 'https://cloud-test.openvalley.net/app-applications#/appsManage', description: "您可以根据您的实际需求选择合适的开发服务能力。" },
+  { title: "上传应用版本", imgUrl: app3, link: 'https://cloud-test.openvalley.net/app-applications#/appDetail?id=c6cd50b524aa40258960d41d903f1707&infoId=0f643dc44fd249e0a01eb48a686636f0', description: "平台提供应用版本管理能力，历史版本、开发中的版本均可在平台进行维护。" },
+  { title: "申请上架贵鸿市场", imgUrl: app4, link: 'https://cloud-test.openvalley.net/app-applications#/app-distribute', description: "提交上架申请，通过后即可在贵鸿应用市场看得并下载应用。" },
 ]
 
 const steps = [
