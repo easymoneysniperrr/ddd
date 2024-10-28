@@ -57,7 +57,13 @@
         <div class="container">
           <div class="section-header">
             <h2>{{ item.title }}</h2>
-            <el-button class="enter-button" type="primary" @click="handleEnterPlatform(item.route)">进入平台</el-button>
+            <el-button 
+              class="enter-button" 
+              type="primary" 
+              @click="handleEnterPlatform(item.route, item.external)"
+            >
+              进入平台
+            </el-button>
           </div>
           <p class="section-desc">
                 {{ item.desc }}
@@ -173,9 +179,10 @@ const router = useRouter()
 
 const platforms = [
   {
-    title:  "全域数字化赋码中心",
+    title: "全域数字化赋码中心",
     desc: '城市全域数字化赋码平台，通过数据励通和开发利用，推动城市规划、建设、管理和服务的数字化转型，提升城市治理的现代化水平。',
-    route: '/digitalCode',
+    route: 'http://117.187.242.207:8082/dmh/%E8%B5%8B%E7%A0%81%E9%97%A8%E6%88%B7.html',  // 修改为实际的外部链接
+    external: true,  // 添加标识
     image: platform1,
     items: [
       {
@@ -193,8 +200,10 @@ const platforms = [
     ]
   },
   {
-    title:  "融合服务中心",
-    desc: '融合人、企、事、物、空间、数据、服务，实现“码上生活、码上管理、码上服务',
+    title: "融合服务中心",
+    desc: '融合人、企、事、物、空间、数据、服务，实现"码上生活、码上管理、码上服务',
+    route: 'http://117.187.242.207:8082/dmh/%E8%9E%8D%E5%90%88%E9%97%A8%E6%88%B7__%E5%9F%8E%E5%B8%82%E7%A0%81_.html',  // 修改为实际的外部链接
+    external: true,  // 添加标识
     image: platform2,
     items: [
       {
@@ -214,11 +223,12 @@ const platforms = [
         title: '城市码'
       }
     ],
-    route: '/fusionService'
   },
   {
-    title:  "城市物联网平台",
+    title: "城市物联网平台",
     desc: '鸿蒙城市物联感知平台是基于鸿蒙操作系统打造的城市感知体系，实现物联、数联、智联一体化，全方位感知城市环境、设备、人员、事件等，助力智慧城市建设。',
+    route: 'http://117.187.242.207:8082/dmh/%E7%89%A9%E8%81%94%E9%97%A8%E6%88%B7.html',  // 修改为实际的外部链接
+    external: true,  // 添加标识
     image: platform3,
     items: [
       {
@@ -234,11 +244,11 @@ const platforms = [
         title: '运维监控一平台'
       }
     ],
-    route: '/iotPlatform'
   },
   {
-    title:  "城市鸿蒙生态中心",
-    desc: '城市鸿蒙生态中心，是在基于 OpenHarmony 打造的贵鸿OS城市发行版的基础上，通过建立资源共享、技术支持、开放交流的平台，提供一站式鸿蒙化解决方案，帮助应用厂商、设备厂商的高效开发鸿蒙应用、低成本实现设备鸿蒙化，推动贵鸿生态系统建设。',
+    title: "城市鸿蒙生态中心",
+    route: '/innovationCenter',
+    external: false,  // 添加标识
     image: platform4,
     items: [
       {
@@ -254,7 +264,6 @@ const platforms = [
         title: '生态设备'
       }
     ],
-    route: '/innovationCenter'
   }
 ]
 
@@ -304,8 +313,12 @@ const tabMap = {
   'transport': 2
 }
 
-const handleEnterPlatform = (route) => {
-  router.push(route)
+const handleEnterPlatform = (route, external) => {
+  if (external) {
+    window.location.href = route
+  } else {
+    router.push(route)
+  }
 }
 
 const scrollToSection = (title) => {
@@ -658,6 +671,7 @@ const generateId = (title) => {
   }
 }
 </style>
+
 
 
 
