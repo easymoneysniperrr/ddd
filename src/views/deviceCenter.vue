@@ -10,10 +10,6 @@
             @click="goToPage('innovation')"
           >创新中心</li>
           <li 
-            class="px-24px cursor-pointer "
-            @click="goToPage('developer')"
-          >贵鸿开发者社区</li>
-          <li 
             class="px-24px cursor-pointer"
             @click="goToPage('application')"
           >贵鸿应用中心</li>
@@ -21,6 +17,10 @@
             class="pl-24px cursor-pointer text-color-#007CF7"
             @click="goToPage('device')"
           >贵鸿设备中心</li>
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('developer')"
+          >贵鸿开发者社区</li>
         </ul>
       </div>
     </header>
@@ -104,7 +104,7 @@
         </div>
       </div>
 
-      <el-pagination background layout="prev, pager, next" :total="1" />
+      <el-pagination background layout="prev, pager, next" :total="9" />
 
     </section>
 
@@ -134,6 +134,12 @@ const d5 = new URL('../assets/images/device-center/d5.png', import.meta.url).hre
 const d6 = new URL('../assets/images/device-center/d6.png', import.meta.url).href
 const d7 = new URL('../assets/images/device-center/d7.png', import.meta.url).href
 const d8 = new URL('../assets/images/device-center/d8.png', import.meta.url).href
+const d9 = new URL('../assets/images/device-center/d9.png', import.meta.url).href
+const d10 = new URL('../assets/images/device-center/d10.png', import.meta.url).href
+const d11 = new URL('../assets/images/device-center/d11.png', import.meta.url).href
+const d12 = new URL('../assets/images/device-center/d12.png', import.meta.url).href
+const d13 = new URL('../assets/images/device-center/d13.png', import.meta.url).href
+const d14 = new URL('../assets/images/device-center/d14.png', import.meta.url).href
 
 import { useRouter } from 'vue-router'
 
@@ -149,24 +155,30 @@ const goToPage = (type) => {
 
 // 接入方式
 const modes = [
-  { title: '贵鸿操作系统接入', desc: '具体说明具体说明具体说明具体说明具体说明具体说明具体说明具体说明', imgUrl: modePng1},
-  { title: '贵鸿SDK接入', desc: '具体说明具体说明具体说明具体说明具体说明具体说明具体说明具体说明', imgUrl: modePng2},
-  { title: '互联互通SDK接入', desc: '具体说明具体说明具体说明具体说明具体说明具体说明具体说明具体说明', imgUrl: modePng3},
-  { title: '模组接入', desc: '具体说明具体说明具体说明具体说明具体说明具体说明具体说明具体说明', imgUrl: modePng4},
+  { title: '贵鸿操作系统接入', desc: '贵鸿操作系统为设备厂商提供一个高效、安全的接入方案，使得各种智能设备能够轻松接入贵鸿生态。', imgUrl: modePng1},
+  { title: '贵鸿SDK接入', desc: '提供给开发者的一套开发工具包，包含了丰富的开放能力和服务，使得他们能够快速、高效地开发和集成设备到贵鸿生态系统中。', imgUrl: modePng2},
+  { title: '互联互通SDK接入', desc: '互联互通SDK是一套工具集，它支持开发者通过集成鸿蒙的互联互通能力，轻松实现设备间的互联互通，构建全场景的智能体验。', imgUrl: modePng3},
+  { title: '模组接入', desc: '使用贵鸿模组实现设备鸿蒙化，意味着将贵鸿OS的核心能力集成到各种智能设备中，从而使设备能够无缝接入贵鸿生态。', imgUrl: modePng4},
 ]
 const systems = [
-  { title: '鸿蒙设备接入', desc: '文案说明，文案说明，文案说明，文案说明，文案说明', imgUrl: systemPng3 },
-  { title: '鸿蒙设备开发', desc: '文案说明，文案说明，文案说明，文案说明，文案说明', imgUrl: systemPng1 },
-  { title: '鸿蒙设备运维', desc: '文案说明，文案说明，文案说明，文案说明，文案说明', imgUrl: systemPng2 }
+  { title: '鸿蒙设备接入', desc: '通过操作系统、SDK、模组等方式实现设备鸿蒙化，加入贵鸿设备生态。', imgUrl: systemPng3 },
+  { title: '鸿蒙设备开发', desc: '通过丰富的开发资料、工具以及强大的开放能力，实现鸿蒙设备的高效开发。', imgUrl: systemPng1 },
+  { title: '鸿蒙设备运维', desc: '提供一系列的能力和工具，实现设备的集中管理、实时监控、高效协同和快速响应，确保设备在贵鸿生态中的稳定运行。', imgUrl: systemPng2 }
 ]
 // 设备数据
 const devices = ref([
   { id: 1, name: '三防平板', type: '开发板', os: '轻量系统', image: d1, desc: '2024.5.16 通过评测', company: '湖南开鸿智谷' },
   { id: 2, name: 'IO控制器', type: '模块', os: '小型系统', image: d4, desc: '2024.5.15 通过评测', company: '湖南开鸿智谷' },
+  { id: 9, name: '空气质量传感', type: '模块', os: '标准系统', image: d9, desc: '2022.6.6 通过评测', company: '先河环保' },
   { id: 3, name: '物联网实训平台', type: '模块', os: '小型系统', image: d6, desc: '2024.8.4 通过评测', company: '湖南开鸿智谷' },
+  { id: 10, name: '恶臭在线监控', type: '模块', os: '标准系统', image: d10, desc: '2023.9.1 通过评测', company: '先河环保' },
   { id: 4, name: '控制器CT21', type: '商业设备', os: '小型系统', image: d8, desc: '2024.4.24 通过评测', company: '湖南开鸿智谷' },
+  { id: 12, name: '烟雾报警器', type: '商业设备', os: '小型系统', image: d12, desc: '2023.6.18 通过评测', company: '深圳市海曼科技股份有限公司' },
+  { id: 13, name: '人体感应器', type: '商业设备', os: '小型系统', image: d13, desc: '2023.6.18 通过评测', company: '深圳市海曼科技股份有限公司' },
   { id: 5, name: 'NiobeU4开发板', type: '模块', os: '轻量系统', image: d3, desc: '2022.4.13 通过评测', company: '湖南开鸿智谷' },
+  { id: 11, name: '扬尘自动检测仪', type: '商业设备', os: '小型系统', image: d11, desc: '2020.7.3 通过评测', company: '先河环保' },
   { id: 6, name: '星闪模组', type: '发行版', os: '轻量系统', image: d5, desc: '2024.10.23 通过评测', company: '湖南开鸿智谷' },
+  { id: 14, name: '梯控摄像头', type: '发行版', os: '轻量系统', image: d14, desc: '2024.10.10 通过评测', company: '凌波电梯' },
   { id: 7, name: '设备开发实验箱', type: '模块', os: '小型系统', image: d7, desc: '2023.9.21 通过评测', company: '湖南开鸿智谷' },
   { id: 8, name: '手持终端', type: '模块', os: '标准系统', image: d2, desc: '2024.10.23 通过评测', company: '湖南开鸿智谷' },
   // 更多设备数据...
@@ -331,6 +343,7 @@ const filteredDevices = computed(() => {
       gap: 24px;
       margin-bottom: 100px;
       .item {
+        flex: 1;
         padding: 51px 64px 54px;
         background: #EDF4FF;
         border-radius: 24px 24px 24px 24px;

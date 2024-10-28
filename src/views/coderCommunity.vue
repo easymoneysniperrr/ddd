@@ -3,7 +3,7 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-27 17:26:39
- * @LastEditTime: 2024-10-27 22:16:51
+ * @LastEditTime: 2024-10-28 15:30:49
 -->
 <template>
   <div class="coder-community">
@@ -17,10 +17,6 @@
             @click="goToPage('innovation')"
           >创新中心</li>
           <li 
-            class="px-24px cursor-pointer text-color-#007CF7"
-            @click="goToPage('developer')"
-          >贵鸿开发者社区</li>
-          <li 
             class="px-24px cursor-pointer"
             @click="goToPage('application')"
           >贵鸿应用中心</li>
@@ -28,6 +24,10 @@
             class="pl-24px cursor-pointer"
             @click="goToPage('device')"
           >贵鸿设备中心</li>
+          <li 
+            class="px-24px cursor-pointer text-color-#007CF7"
+            @click="goToPage('developer')"
+          >贵鸿开发者社区</li>
         </ul>
       </div>
     </header>

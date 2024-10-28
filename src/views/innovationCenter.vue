@@ -1,10 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-100">
     <!-- Header -->
-    <header class="w-100% h-680px bg-cover bg-center relative">
-      <!-- 背景图片放在最底层 -->
-      <img src="@/assets/images/innovationCenter/banner.png" alt="创新中心横幅" class="w-full h-full object-cover absolute top-0 left-0">
-      
+    <header class="w-100% h-68px bg-cover bg-center relative">
       <!-- 导航栏提高层级 -->
       <div class="box-border px-40px absolute left-0 top-0 w-full h-64px bg-white bg-op-70 flex flex-row items-center justify-between z-10">
         <h1 class="text-20px font-500 mb-4px cursor-pointer" @click="router.push('/websiteHome')">贵阳贵安鸿蒙城市生态中心</h1>
@@ -15,23 +12,17 @@
           >创新中心</li>
           <li 
             class="px-24px cursor-pointer"
-            @click="goToPage('developer')"
-          >贵鸿开发者社区</li>
-          <li 
-            class="px-24px cursor-pointer"
             @click="goToPage('application')"
           >贵鸿应用中心</li>
           <li 
             class="pl-24px cursor-pointer"
             @click="goToPage('device')"
           >贵鸿设备中心</li>
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('developer')"
+          >贵鸿开发者社区</li>
         </ul>
-      </div>
-
-      <!-- 中间的文字内容 -->
-      <div class="absolute left-0 top-0 w-full h-full flex flex-col items-center justify-center mt--140px z-1">
-        <p class="text-72px font-500 color-white">贵鸿生态创新中心</p>
-        <p class="text-32px color-white fw-400 mt-37px">基于 OpenHarmony 打造贵鸿OS城市发行版，赋能千行百业</p>
       </div>
     </header>
     <!-- 贵鸿OS Features -->
