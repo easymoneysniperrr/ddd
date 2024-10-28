@@ -33,11 +33,13 @@
     <section class="device-area">
       <div class="title">基于贵鸿，打造生态硬件设备</div>
       <div class="des">繁荣鸿蒙生态发展，赋能智盖城市管理、服务提质增效</div>
-      <div class="device">
+      <div class="img"></div>
+      <!-- <img src="" alt=""> -->
+      <!-- <div class="device">
         <div v-for="i of 5">
           <img src="../assets/images/device-center/water.png">
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section class="access-mode-area">
@@ -95,7 +97,7 @@
       <!-- 设备展示 -->
       <div class="device-list">
         <div v-for="device in filteredDevices" :key="device.id" class="device-card">
-          <img :src="device.image"/>
+          <img style="height: 246px;" :src="device.image"/>
           <p class="title">{{ device.name }}</p>
           <p class="desc">{{ device.desc }}</p>
           <p class="company">{{ device.company }}</p>
@@ -124,6 +126,14 @@ const systemPng2 = new URL('../assets/images/device-center/Frame(1).png', import
 const systemPng3 = new URL('../assets/images/device-center/Frame(2).png', import.meta.url).href
 
 const devicePng1 = new URL('../assets/images/device-center/water.png', import.meta.url).href
+const d1 = new URL('../assets/images/device-center/d1.png', import.meta.url).href
+const d2 = new URL('../assets/images/device-center/d2.png', import.meta.url).href
+const d3 = new URL('../assets/images/device-center/d3.png', import.meta.url).href
+const d4 = new URL('../assets/images/device-center/d4.png', import.meta.url).href
+const d5 = new URL('../assets/images/device-center/d5.png', import.meta.url).href
+const d6 = new URL('../assets/images/device-center/d6.png', import.meta.url).href
+const d7 = new URL('../assets/images/device-center/d7.png', import.meta.url).href
+const d8 = new URL('../assets/images/device-center/d8.png', import.meta.url).href
 
 import { useRouter } from 'vue-router'
 
@@ -151,8 +161,14 @@ const systems = [
 ]
 // 设备数据
 const devices = ref([
-  { id: 1, name: '星闪开发板', type: '开发板', os: '轻量系统', image: devicePng1, desc: '2024.10.23 通过评测', company: '湖南开鸿智谷' },
-  { id: 2, name: '星闪模块', type: '模块', os: '小型系统', image: devicePng1, desc: '2024.10.23 通过评测', company: '湖南开鸿智谷' },
+  { id: 1, name: '三防平板', type: '开发板', os: '轻量系统', image: d1, desc: '2024.5.16 通过评测', company: '湖南开鸿智谷' },
+  { id: 2, name: 'IO控制器', type: '模块', os: '小型系统', image: d4, desc: '2024.5.15 通过评测', company: '湖南开鸿智谷' },
+  { id: 3, name: '物联网实训平台', type: '模块', os: '小型系统', image: d6, desc: '2024.8.4 通过评测', company: '湖南开鸿智谷' },
+  { id: 4, name: '控制器CT21', type: '商业设备', os: '小型系统', image: d8, desc: '2024.4.24 通过评测', company: '湖南开鸿智谷' },
+  { id: 5, name: 'NiobeU4开发板', type: '模块', os: '轻量系统', image: d3, desc: '2022.4.13 通过评测', company: '湖南开鸿智谷' },
+  { id: 6, name: '星闪模组', type: '发行版', os: '轻量系统', image: d5, desc: '2024.10.23 通过评测', company: '湖南开鸿智谷' },
+  { id: 7, name: '设备开发实验箱', type: '模块', os: '小型系统', image: d7, desc: '2023.9.21 通过评测', company: '湖南开鸿智谷' },
+  { id: 8, name: '手持终端', type: '模块', os: '标准系统', image: d2, desc: '2024.10.23 通过评测', company: '湖南开鸿智谷' },
   // 更多设备数据...
 ]);
 
@@ -224,6 +240,11 @@ const filteredDevices = computed(() => {
       font-size: 14px;
       line-height: 27px;
       color: rgba(0,0,0,0.6);
+    }
+    .img {
+      background: url('../assets/images/device-center/device_list.png') center center / cover no-repeat;
+      width: 100%;
+      height: 100%;
     }
     .device {
       display: flex;
