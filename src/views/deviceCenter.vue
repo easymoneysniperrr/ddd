@@ -27,7 +27,7 @@
 
     <section class="banner-area">
       <div class="title">贵鸿设备中心</div>
-      <div class="des">繁荣鸿蒙生态发展，赋能智盖城市管理、服务提质增效</div>
+      <div class="des">繁荣鸿蒙生态发展，赋能智慧城市管理、服务提质增效</div>
     </section>
 
     <section class="device-area">
