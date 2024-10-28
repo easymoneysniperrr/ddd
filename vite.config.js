@@ -3,7 +3,7 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-25 10:38:30
- * @LastEditTime: 2024-10-25 17:54:55
+ * @LastEditTime: 2024-10-28 11:38:15
  */
 import { fileURLToPath, URL } from 'node:url'
 
@@ -19,7 +19,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/newportal/', // 匹配 Nginx 配置的路径前缀
   plugins: [
     vue(),
     AutoImport({
@@ -35,11 +34,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()]
     }),
     UnoCSS({
-      presets: [
-        presetUno(),
-        presetAttributify(),
-        presetIcons()
-      ]
+      presets: [presetUno(), presetAttributify(), presetIcons()]
     })
   ],
   css: {
