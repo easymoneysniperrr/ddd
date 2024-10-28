@@ -27,25 +27,25 @@
       <!-- 轮播图部分 -->
       <div class="carousel-container">
         <div class="carousel-img" />
-      </div>
-
-      <!-- 四个功能模块 -->
-      <section class="platform-section">
-        <div class="container">
-          <el-row :gutter="20">
-            <el-col :xs="24" :sm="12" :md="6" v-for="(item, index) in platforms" :key="index">
-              <el-card class="platform-card" style="cursor: pointer;" shadow="hover" @click="scrollToSection(item.title)">
-                <div class="card-content">
-                  <img :src="item.image" width="72" height="72">
-                  <div class="card-text">
-                    <h3>{{ item.title }}</h3>
+        
+        <!-- 四个功能模块 -->
+        <section class="platform-section">
+          <div class="container">
+            <el-row :gutter="20">
+              <el-col :xs="24" :sm="12" :md="6" v-for="(item, index) in platforms" :key="index">
+                <el-card class="platform-card" style="cursor: pointer;" shadow="hover" @click="scrollToSection(item.title)">
+                  <div class="card-content">
+                    <img :src="item.image" width="72" height="72">
+                    <div class="card-text">
+                      <h3>{{ item.title }}</h3>
+                    </div>
                   </div>
-                </div>
-              </el-card>
-            </el-col>
-          </el-row>
-        </div>
-      </section>
+                </el-card>
+              </el-col>
+            </el-row>
+          </div>
+        </section>
+      </div>
 
       <!-- 平台板块 -->
       <section v-for="(item, index) in platforms" 
@@ -178,8 +178,29 @@ import platform4_3 from '@/assets/images/platforms_4_3.png'
 const router = useRouter()
 
 const platforms = [
+{
+    title: "城市全域数字化鸿蒙物联感知平台",
+    desc: '鸿蒙城市物联感知平台是基于鸿蒙操作系统打造的城市感知体系，实现物联、数联、智联一体化，全方位感知城市环境、设备、人员、事件等，助力智慧城市建设。',
+    route: 'http://117.187.242.207:8082/dmh/%E7%89%A9%E8%81%94%E9%97%A8%E6%88%B7.html',  // 修改为实际的外部链接
+    external: true,  // 添加标识
+    image: platform3,
+    items: [
+      {
+        image: platform3_1,
+        title: '全域感知一张图'
+      },
+      {
+        image: platform3_2,
+        title: '智能场景一体化'
+      },
+      {
+        image: platform3_3,
+        title: '运维监控一平台'
+      }
+    ],
+  },
   {
-    title: "全域数字化赋码中心",
+    title: "城市全域数字化赋码平台",
     desc: '城市全域数字化赋码平台，通过数据励通和开发利用，推动城市规划、建设、管理和服务的数字化转型，提升城市治理的现代化水平。',
     route: 'http://117.187.242.207:8082/dmh/%E8%B5%8B%E7%A0%81%E9%97%A8%E6%88%B7.html',  // 修改为实际的外部链接
     external: true,  // 添加标识
@@ -200,7 +221,7 @@ const platforms = [
     ]
   },
   {
-    title: "融合服务中心",
+    title: "城市全域数字化融合服务平台",
     desc: '融合人、企、事、物、空间、数据、服务，实现"码上生活、码上管理、码上服务',
     route: 'http://117.187.242.207:8082/dmh/%E8%9E%8D%E5%90%88%E9%97%A8%E6%88%B7__%E5%9F%8E%E5%B8%82%E7%A0%81_.html',  // 修改为实际的外部链接
     external: true,  // 添加标识
@@ -221,27 +242,6 @@ const platforms = [
       {
         image: platform2_4,
         title: '城市码'
-      }
-    ],
-  },
-  {
-    title: "城市物联网平台",
-    desc: '鸿蒙城市物联感知平台是基于鸿蒙操作系统打造的城市感知体系，实现物联、数联、智联一体化，全方位感知城市环境、设备、人员、事件等，助力智慧城市建设。',
-    route: 'http://117.187.242.207:8082/dmh/%E7%89%A9%E8%81%94%E9%97%A8%E6%88%B7.html',  // 修改为实际的外部链接
-    external: true,  // 添加标识
-    image: platform3,
-    items: [
-      {
-        image: platform3_1,
-        title: '全域感知一张图'
-      },
-      {
-        image: platform3_2,
-        title: '智能场景一体化'
-      },
-      {
-        image: platform3_3,
-        title: '运维监控一平台'
       }
     ],
   },
@@ -280,7 +280,7 @@ const carousel = ref(null)
 const caseList = [
   {
     title: '智慧园区场景解决方案',
-    description: '通过数字化技术提升园区管理效率，优化资源配置，为企业提供更好的服务环境。',
+    description: '通过数字化技术提升园区管理效率，优化资源��置，为企业提供更好的服务环境。',
     features: ['智能安防系统', '能源管理平台', '园区服务一体化'],
     image: '/images/case-park.jpg'
   },
@@ -389,7 +389,7 @@ const generateId = (title) => {
 }
   .carousel-container {
     width: 100%;
-    height: 960px;
+    height: 920px;
     background-image: url('@/assets/images/banner_bg.png');
     background-size: 100% 100%;
     margin-top: -64px;
@@ -407,7 +407,7 @@ const generateId = (title) => {
   }
 
   section {
-    padding: 80px 0 113px;
+    padding: 120px 0 113px;
     
     h2 {
       font-size: 24px;
@@ -417,10 +417,17 @@ const generateId = (title) => {
   }
 
   .platform-section {
-    background: rgba(244, 249, 255, 1);
-    padding: 64px 0 31px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 0;
+    
     .platform-card {
-      background: rgba(255, 255, 255, 1);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       height: 100%;
       transition: all 0.3s;
       border-radius: 16px;
@@ -447,6 +454,7 @@ const generateId = (title) => {
           margin-bottom: 8px;
           color: rgba(0, 0, 0, 0.90);
           font-weight: 400;
+          line-height: 1.5
         }
 
         p {
@@ -671,6 +679,7 @@ const generateId = (title) => {
   }
 }
 </style>
+
 
 
 

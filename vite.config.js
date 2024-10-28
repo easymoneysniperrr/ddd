@@ -19,7 +19,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/newportal/', // 匹配 Nginx 配置的路径前缀
+  // base: '/newportal/', // 匹配 Nginx 配置的路径前缀
   plugins: [
     vue(),
     AutoImport({
