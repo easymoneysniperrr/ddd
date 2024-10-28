@@ -1,5 +1,30 @@
 <template>
   <div class="device-center">
+    <header class="w-100% h-68px bg-cover bg-center relative">
+      <!-- 导航栏提高层级 -->
+      <div class="box-border px-40px absolute left-0 top-0 w-full h-64px bg-white bg-op-70 flex flex-row items-center justify-between z-10">
+        <h1 class="text-20px font-500 mb-4px">贵阳贵安鸿蒙城市生态中心</h1>
+        <ul class="flex flex-row items-center justify-between text-16px">
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('innovation')"
+          >创新中心</li>
+          <li 
+            class="px-24px cursor-pointer "
+            @click="goToPage('developer')"
+          >贵鸿开发者社区</li>
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('application')"
+          >贵鸿应用中心</li>
+          <li 
+            class="pl-24px cursor-pointer text-color-#007CF7"
+            @click="goToPage('device')"
+          >贵鸿设备中心</li>
+        </ul>
+      </div>
+    </header>
+
     <section class="banner-area">
       <div class="title">贵鸿设备中心</div>
       <div class="des">繁荣鸿蒙生态发展，赋能智盖城市管理、服务提质增效</div>
@@ -100,6 +125,18 @@ const systemPng3 = new URL('../assets/images/device-center/Frame(2).png', import
 
 const devicePng1 = new URL('../assets/images/device-center/water.png', import.meta.url).href
 
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const goToPage = (type) => {
+  const routes = {
+    innovation: '/innovationCenter',    // 创新中心路由
+    developer: '/coderCommunity',   // 应用中心路由
+    application: '/appCenter',   // 应用中心路由
+  }
+  router.push(routes[type])
+}
+
 // 接入方式
 const modes = [
   { title: '贵鸿操作系统接入', desc: '具体说明具体说明具体说明具体说明具体说明具体说明具体说明具体说明', imgUrl: modePng1},
@@ -155,6 +192,7 @@ const filteredDevices = computed(() => {
   .banner-area {
     height: 616px;
     justify-content: center;
+    background-image: url('../assets/images/device-center/banner.png');
     align-items: center;
     color: #FFFFFF;
     background-color: #ccc;

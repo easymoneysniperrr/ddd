@@ -3,10 +3,35 @@
  * @Author: 欧阳承珺
  * @LastEditors: 欧阳承珺
  * @Date: 2024-10-25 16:12:44
- * @LastEditTime: 2024-10-28 00:16:13
+ * @LastEditTime: 2024-10-28 10:28:41
 -->
 <template>
   <div class="app-center">
+    <header class="w-100% h-68px bg-cover bg-center relative">
+      <!-- 导航栏提高层级 -->
+      <div class="box-border px-40px absolute left-0 top-0 w-full h-64px bg-white bg-op-70 flex flex-row items-center justify-between z-10">
+        <h1 class="text-20px font-500 mb-4px">贵阳贵安鸿蒙城市生态中心</h1>
+        <ul class="flex flex-row items-center justify-between text-16px">
+          <li 
+            class="px-24px cursor-pointer"
+            @click="goToPage('innovation')"
+          >创新中心</li>
+          <li 
+            class="px-24px cursor-pointer "
+            @click="goToPage('developer')"
+          >贵鸿开发者社区</li>
+          <li 
+            class="px-24px cursor-pointer text-color-#007CF7"
+            @click="goToPage('application')"
+          >贵鸿应用中心</li>
+          <li 
+            class="pl-24px cursor-pointer"
+            @click="goToPage('device')"
+          >贵鸿设备中心</li>
+        </ul>
+      </div>
+    </header>
+    
     <section class="banner-area">
       <div class="title" style="color: white;">贵鸿应用中心</div>
       <div class="des">贵鸿应用中心是汇聚创新应用、提供全场景智慧体验的开发者平台，提供贵鸿应用和卡片的开发接入服务，帮助应用广商低成本完成应用和卡片的开发，为客户打造极致的场景体验，构建活跃的贵鸿应用生态。</div>
@@ -43,7 +68,8 @@
       <div class="cards">
         <div class="item" :style="{ backgroundImage: `url(${item.image})` }" v-for="item of yunyinzengzhi">
           <p class="mini-title" style="margin-bottom: 10px;">{{ item.title }}</p>
-          <p class="desc">{{ item.desc }}</p>
+          <p class="desc" style="margin-bottom: 10px;">{{ item.desc }}</p>
+          <a style="color: #007CF7;text-decoration: none;" target="_blank" :href="item.link">前往 >></a>
         </div>
       </div>
     </section>
@@ -126,6 +152,18 @@ const classic1 = new URL('../assets/images/app-center/classic1.png', import.meta
 const classic2 = new URL('../assets/images/app-center/classic2.png', import.meta.url).href
 const classic4 = new URL('../assets/images/app-center/classic4.png', import.meta.url).href
 const classic5 = new URL('../assets/images/app-center/classic5.png', import.meta.url).href
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const goToPage = (type) => {
+  const routes = {
+    innovation: '/innovationCenter',    // 创新中心路由
+    developer: '/coderCommunity',   // 应用中心路由
+    device: '/deviceCenter'             // 设备中心路由
+  }
+  router.push(routes[type])
+}
 
 const classicCards = [
   { title: '领导类卡片', img: classic2, desc: '如城市经济运行指数、城市安全事态...' },
